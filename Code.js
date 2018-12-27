@@ -121,6 +121,9 @@ function getDuration(input) {
 }
 
 function getProgressBar(percentage) {
+  if (percentage > 100) {
+    percentage = 100;
+  }
   const symbolArray = [
     '⣀',
     '⣄',

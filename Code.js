@@ -46,10 +46,10 @@ function myFunction() {
 
   // Create a description
   var currentYear = new Date().getFullYear();
-  var currentDate = new Date().getTime() - new Date(2018, 1, 1, 0, 0, 0, 0).getTime();
-  var endOfYear = new Date(2019, 1, 1, 0, 0, 0, 0).getTime() - new Date(2018, 1, 1, 0, 0, 0, 0).getTime();
+  var currentDate = new Date().getTime() - new Date(currentYear, 0, 1, 0, 0, 0, 0).getTime();
+  var endOfYear = new Date(currentYear+1, 0, 1, 0, 0, 0, 0).getTime() - new Date(currentYear, 0, 1, 0, 0, 0, 0).getTime();
   var goalProgressPercentage = (distanceThisYearInKilometers / goals[currentYear]) * 100;
-  var yearProgressPercentage = (currentDate / endOfYear) * 100;
+  var yearProgressPercentage = ((endTime.getTime() - new Date(currentYear, 0, 1, 0, 0, 0, 0).getTime())/ endOfYear) * 100;
   var progressSymbol;
   if (goalProgressPercentage > yearProgressPercentage) progressSymbol = '✅'
   else progressSymbol = '❌';

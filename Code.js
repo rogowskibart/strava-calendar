@@ -146,8 +146,10 @@ function getProgressBar(percentage) {
     numberOfFullBars--;
     numberOfBarsDrawn++;
   }
-  progressBar += symbolArray[whichSymbol];
-  numberOfBarsDrawn++;
+  if (numberOfBarsDrawn < progressBarLength) {
+    progressBar += symbolArray[whichSymbol];
+    numberOfBarsDrawn++;
+  }
 
   while (numberOfBarsDrawn < progressBarLength) {
     progressBar += symbolArray[0];
